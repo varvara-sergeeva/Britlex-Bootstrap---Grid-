@@ -1,15 +1,14 @@
+/*Добавление сетки Bootstrap*/
+@import "../../node_modules/bootstrap/scss/bootstrap-grid.scss";
+//@import "functions";
+//@import "variables";
+//@import "mixins/breakpoints";
+//@import "mixins/container";
+//@import "mixins/grid";
 /*Добавление глобальных стилей*/
 @import "global/font.scss";
 @import "global/variables.scss";
 @import "global/visually-hidden.scss";
 @import "global/mixin.scss";
-/*Блоки общие всех страниц Header*/
+/*Блоки странички*/
 @import "blocks/page.scss";
-@import "blocks/header.scss";
-@import "blocks/navigation.scss";
-@import "blocks/menu.scss";
-/*Блоки index.html*/
-@import "blocks/promo.scss";
-@import "blocks/discount.scss";
-@import "blocks/price.scss";
-@import "blocks/button.scss";
