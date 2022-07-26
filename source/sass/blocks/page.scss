@@ -10,7 +10,7 @@
 
 .container {
   @include make-container();
-  max-width: 1340px;
+  @include make-max-width-container();
 }
 
 .block {
@@ -21,35 +21,76 @@
   height: 100%;
 }
 
-.box {
-  background-color: hsl(213, 67%, 80%);
-  border: 1px solid rgb(98, 117, 228);
-  padding: 20px;
-  text-align: center;
-}
+.grid-row {
+  @include make-row();
+  --bs-gutter-y: 1rem;
 
-.wrap-block {
-  background-color: hsl(120, 75%, 75%);
-  border: 1px solid rgb(77, 155, 70);
-  margin: 0;
-  padding: 0;
+  & > * {
+    @include make-col-ready();
+  }
 }
 
 .header {
+  @extend .grid-row;
   min-height: 90px;
-  margin-bottom: 50px;
+  margin-bottom: 30px;
+
+  &__logo {
+    @include make-col(6);
+  }
+
+  &__nav {
+    @include make-col(6);
+  }
+
+  @include media-breakpoint-up(md) {
+    margin-bottom: 40px;
+
+    &__logo {
+      @include make-col(2);
+    }
+
+    &__nav {
+      @include make-col(10);
+    }
+  }
+
+  @media (min-width: $tablet) {
+    margin-bottom: 50px;
+  }
 }
 
 .promo {
+  @extend .grid-row;
   min-height: 660px;
-  margin-bottom: 280px;
+  margin-bottom: 163px;
+
+  @media (min-width: $mobile) {
+    margin-bottom: 210px;
+  }
+
+  @media (min-width: $tablet) {
+    margin-bottom: 177px;
+  }
+
+  @include media-breakpoint-up(md) {
+    &__item {
+      @include make-col(6);
+    }
+  }
+
+  @media (min-width: $desktop) {
+    margin-bottom: 278px;
+  }
 }
 
 .skill {
+  @extend .grid-row;
   min-height: 894px;
-  margin-bottom: 250px;
+  margin-bottom: 50px;
 
-  @media (min-width: 576px) {
+  @media (min-width: $mobile) {
+    margin-bottom: 84px;
     display: grid;
     grid-template: 1fr 1fr / 1fr 1fr;
 
@@ -74,7 +115,8 @@
     }
   }
 
-  @media (min-width: 768px) {
+  @media (min-width: $middle) {
+    margin-bottom: 52px;
     grid-template: 60% 40% / 1fr 1fr 1fr;
 
     &__speaking {
@@ -97,19 +139,100 @@
       grid-column: 2 / 4;
     }
   }
+
+  @media (min-width: $tablet) {
+    margin-bottom: 106px;
+  }
+
+  @media (min-width: $desktop) {
+    margin-bottom: 250px;
+  }
 }
 
 .about-us {
+  @extend .grid-row;
   min-height: 500px;
-  margin-bottom: 325px;
+  margin-bottom: 200px;
+
+  @media (min-width: $mobile) {
+    margin-bottom: 260px;
+  }
+
+  @include media-breakpoint-up(md) {
+    margin-bottom: 200px;
+
+    &__item {
+      @include make-col(6);
+    }
+  }
+
+  @media (min-width: $desktop) {
+    margin-bottom: 325px;
+  }
 }
 
 .pricing {
+  @extend .grid-row;
   min-height: 582px;
-  margin-bottom: 260px;
+  margin-bottom: 190px;
+
+  @media (min-width: $mobile) {
+    margin-bottom: 326px;
+  }
+
+  @include media-breakpoint-up(md) {
+    margin-bottom: 101px;
+
+    &__item {
+      @include make-col(4);
+    }
+  }
+
+  @media (min-width: $tablet) {
+    margin-bottom: 140px;
+  }
+
+  @media (min-width: $desktop) {
+    margin-bottom: 260px;
+  }
 }
 
 .contact {
+  @extend .grid-row;
   min-height: 430px;
   margin-bottom: 133px;
+
+  @include media-breakpoint-up(md) {
+    &__img {
+      @include make-col(4);
+    }
+
+    &__form {
+      @include make-col(8);
+    }
+  }
+}
+
+.footer {
+  @extend .grid-row;
+
+  @include media-breakpoint-up(sm) {
+    &__logo {
+      @include make-col(3);
+    }
+
+    &__policy {
+      @include make-col(9);
+    }
+  }
+
+  @include media-breakpoint-up(md) {
+    &__logo {
+      @include make-col(2);
+    }
+
+    &__policy {
+      @include make-col(10);
+    }
+  }
 }
