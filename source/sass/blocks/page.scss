@@ -86,6 +86,7 @@
 
 .test-checkbox {
   padding-top: 30px;
+  background: rgb(193, 227, 182);
 }
 
 //!   CHECKED - CHECKED CHECKED - CHECKED CHECKED - CHECKED CHECKED - CHECKED
@@ -94,6 +95,11 @@
   font-weight: 400;
   max-width: 350px;
   min-height: 150px;
+
+  @media (min-width: $mobile) {
+    max-width: 180px;
+    min-height: 90px;
+  }
 }
 
 .checkbox__form input {
@@ -112,6 +118,13 @@
   top: -24px;
   left: -200px;
   transition: all 0.06 ease;
+
+  @media (min-width: $mobile) {
+    width: 42px;
+    height: 42px;
+    left: -98px;
+    top: -4px;
+  }
 }
 
 .checkbox__form input:checked::before {
@@ -129,6 +142,11 @@
   display: block;
   cursor: pointer;
   z-index: 2;
+
+  @media (min-width: $mobile) {
+    width: 24px;
+    height: 12px;
+  }
 }
 
 .checkbox__form input:checked + label {
@@ -146,11 +164,22 @@
   top: 4px;
   left: 4px;
   transition: all 0.2s ease;
+
+  @media (min-width: $mobile) {
+    width: 8px;
+    height: 8px;
+    top: 2px;
+    left: 3px;
+  }
 }
 
 .checkbox__form input:checked + label::after {
   left: calc(100% - 24px);
   box-shadow: 2px 2px 6px rgba(36, 65, 93, 0.3), -1px -1px 6px rgb(255, 255, 255);
+
+  @media (min-width: $mobile) {
+    left: calc(100% - 11px);
+  }
 }
 
 .checkbox-text {
@@ -164,6 +193,11 @@
   top: -53px;
   opacity: 0;
   transition: all 0.2s ease;
+
+  @media (min-width: $mobile) {
+    max-width: auto;
+    top: -25px;
+  }
 }
 
 .checkbox-text p {
@@ -171,8 +205,13 @@
   text-align: left;
   font-size: 20px;
   line-height: 27px;
-  margin-bottom: 5px;
   color: rgb(0, 0, 0);
+
+  @media (min-width: $mobile) {
+    font-size: 10px;
+    line-height: 14px;
+    margin: 7px 0 0 0;
+  }
 }
 
 .checkbox__1 input:checked ~ .checkbox-text,
@@ -186,27 +225,47 @@
   opacity: 1;
   padding-left: 96px;
   padding-right: 30px;
+
+  @media (min-width: $mobile) {
+    min-height: 38px;
+    padding-left: 44px;
+  }
 }
 
 .checkbox__1 input:checked ~ .checkbox-text {
   left: -67px;
+
+  @media (min-width: $mobile) {
+    left: -27px;
+  }
 }
 
 .checkbox__2 input:checked ~ .checkbox-text {
   left: -22px;
   padding-right: 20px;
+
+  @media (min-width: $mobile) {
+    left: -8px;
+  }
 }
 
 .checkbox__3 input:checked ~ .checkbox-text {
   left: -28px;
+
+  @media (min-width: $mobile) {
+    left: -13px;
+    padding-right: 20px;
+  }
 }
 
 .checkbox__4 input:checked ~ .checkbox-text {
   left: -24px;
+
+  @media (min-width: $mobile) {
+    left: -15px;
+    padding-right: 10px;
+  }
 }
-
-
-
 
 //!   CHECKED - CHECKED CHECKED - CHECKED CHECKED - CHECKED CHECKED - CHECKED
 
