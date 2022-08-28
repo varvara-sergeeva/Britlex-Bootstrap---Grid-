@@ -267,7 +267,209 @@
   }
 }
 
-//!   CHECKED - CHECKED CHECKED - CHECKED CHECKED - CHECKED CHECKED - CHECKED
+//!   TIMELINE      TIMELINE      TIMELINE      TIMELINE      TIMELINE      TIMELINE      TIMELINE      TIMELINE
+
+.timeline__wrapper {
+  font-family: "Oswald", sans-serif;
+  width: 100%;
+  padding: 50px 0;
+  margin: 50px auto;
+  position: relative;
+  overflow: hidden;
+}
+
+.timeline__line {
+  position: absolute;
+  left: 50%;
+  top: 50px;
+  margin-left: -1px;
+  width: 2px;
+  height: 75%;
+  background: rgb(3, 32, 78);
+  z-index: 1;
+}
+
+.active.timeline__wrapper::before {
+  background: rgb(235, 103, 95);
+}
+
+.timeline-block {
+  width: calc(50% + 8px);
+  display: flex;
+  justify-content: space-between;
+  text-align: left;
+  //clear: both;
+}
+
+.timeline-block-right {
+  position: relative;
+  float: right;
+}
+
+//отодвигает от линии блоки справа
+.timeline-block-right > .timeline-content {
+  padding-left: 35px;
+}
+
+.timeline-block-left {
+  position: relative;
+  float: left;
+  direction: rtl;
+}
+
+.marker {
+  width: 23px;
+  height: 23px;
+  border-radius: 50%;
+  border: 2px solid rgb(197, 197, 197);
+  background: rgb(197, 197, 197);
+  z-index: 9999;
+}
+
+.marker-left {
+  margin-right: -4px;
+}
+
+.marker--last {
+  margin-top: 40px;
+}
+
+.marker-right {
+  margin-left: -4px;
+}
+
+.timeline-content {
+  width: 95%;
+  color: rgb(102, 102, 102);
+}
+
+.timeline-content h3 {
+  margin-top: 5px;
+  margin-bottom: 5px;
+  font-size: 48px;
+  line-height: 61px;
+  font-weight: 500;
+  color: hsl(0, 0%, 77%);
+}
+
+//!   TIMELINE      TIMELINE      TIMELINE      TIMELINE      TIMELINE      TIMELINE      TIMELINE      TIMELINE
+
+//!   COMPARISON      COMPARISON      COMPARISON      COMPARISON      COMPARISON      COMPARISON      COMPARISON
+
+:root {
+  --comparison-container-widht: min(80vw, 1267px);
+}
+
+.comparison {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  //контейнер важен парамерт ширины
+  &__container {
+    position: relative;
+    width: var(--comparison-container-widht);
+    overflow: hidden;
+    border-radius: 27px;
+    box-shadow: 0 4px 28px 0 rgba(0, 0, 0, 0.25);
+    margin-bottom: 100px;
+    cursor: col-resize;
+    color: rgb(255, 255, 255);
+  }
+
+  //стилизация картинки первой - важна ширина, высота, адаптивность
+  &__container img {
+    display: block;
+    width: var(--comparison-container-widht);
+    max-height: 618px;
+    object-fit: cover;
+    pointer-events: none;
+    user-select: none;
+  }
+
+  //обёртка наложенной картинки - важно позиционирование справа, ширина, overflow, z-index
+  &__wrap {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 60%;
+    overflow: hidden;
+    z-index: 1;
+  }
+
+  // важна высота второй картинки
+  &__wrap img {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+  }
+
+  // z-index ставим, так как на врапере тоже он стоит
+  &__label {
+    position: absolute;
+    z-index: 3;
+    user-select: none;
+    color: rgb(255, 0, 0);
+  }
+
+  &__label--before {
+    top: 30px;
+    left: 1rem;
+  }
+
+  &__label--after {
+    bottom: 30px;
+    right: 1rem;
+  }
+}
+
+//важен z-index он будет слоем после картинки, но до надписи
+// left - задаёт где будет стоять изначально разделитель
+.handle {
+  position: absolute;
+  top: 0;
+  left: calc(40% - 19px);
+  width: 38px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  user-select: none;
+  z-index: 2;
+
+  // важно flex-grow - линия занимает всё свободное пространство по основной оси флекса handle
+  &__line {
+    width: 4px;
+    flex-grow: 1;
+    background-color: rgb(255, 255, 255);
+  }
+
+  &__arrows {
+    width: 12px;
+    height: 81px;
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    align-items: center;
+  }
+
+  &__arrow {
+    position: relative;
+  }
+
+  &__arrow--before {
+    right: 8px;
+  }
+
+  &__arrow--after {
+    left: 8px;
+  }
+}
+
+//!   COMPARISON      COMPARISON      COMPARISON      COMPARISON      COMPARISON      COMPARISON      COMPARISON
 
 .skill {
   @extend .grid-row;
