@@ -284,9 +284,14 @@
   top: 50px;
   margin-left: -1px;
   width: 2px;
-  height: 75%;
-  background: rgb(3, 32, 78);
+  height: 1%;
   z-index: 1;
+  transition: all 5s ease 0s;
+}
+
+.timeline__line.active {
+  background-color: $colorBright;
+  height: 75%;
 }
 
 .active.timeline__wrapper::before {
@@ -343,14 +348,20 @@
   color: rgb(102, 102, 102);
 }
 
-.timeline-content h3 {
+h3 {
   margin-top: 5px;
   margin-bottom: 5px;
   font-size: 48px;
   line-height: 61px;
   font-weight: 500;
   color: hsl(0, 0%, 77%);
+  transition: all 2s ease 0s;
 }
+
+h3.active {
+  color: $colorBright;
+}
+
 
 //!   TIMELINE      TIMELINE      TIMELINE      TIMELINE      TIMELINE      TIMELINE      TIMELINE      TIMELINE
 
