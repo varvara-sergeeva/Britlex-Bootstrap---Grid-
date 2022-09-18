@@ -173,11 +173,17 @@
           </div>
         </div>
         <div class="skill__listening">
-          <div class="block">
-            <picture></picture>
-            <h3>Listening</h3>
-            <p>Here you can find activities to practise your listening skills. Listening will help you to improve your understanding.</p>
-            <a href="">Learn more</a>
+          <div class="block block--listening range">
+            <div class="range__container">
+              <label class="range__item">
+                <input type="range" min="1" max="100" value="1" id="range-5" class="range__body">
+              </label>
+            </div>
+            <div class="range__container">
+              <label class="range__item">
+                <input type="range" min="0" max="4" value="1" id="range-1" class="range__body">
+              </label>
+            </div>
           </div>
         </div>
       </section>
@@ -196,9 +202,6 @@
         </div>
         <div class="about-us__item">
           <div class="block">
-            <picture>PHOTO
-              <img src="#" alt="">
-            </picture>
           </div>
         </div>
       </section>
@@ -270,6 +273,7 @@
         </div>
       </footer>
     </div>
+    <script src="./js/range.js"></script>
   <script src="./js/comparison.js"></script>
   <script src="./js/timeline.js"></script>
   </body>
