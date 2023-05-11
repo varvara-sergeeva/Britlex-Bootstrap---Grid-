@@ -1,12 +1,15 @@
 Comands to start
 
 // node -v
+
 16.14
 
 // to dev
+
 npm run start
 
 // to build
+
 gulp build
 
 
